@@ -14,12 +14,12 @@ function App() {
         console.error('There was an error!', error);
       });
   }, []);
-
   return (
     <div className="App">
-      {greeting}
+      hello world
+      <p>{greeting}</p>
     </div>
-  );
+  )
 }
 
 export default App;
