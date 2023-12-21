@@ -1,18 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const [activeLink, setActiveLink] = useState<string | null>(null);
+
+  const handleMouseEnter = (link: string) => {
+    setActiveLink(link);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveLink(null);
+  };
+
+  const navItems = [
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'Contact', link: '/contact' },
+  ];
+
   return (
-    <nav className="navbar bg-gray-700 p-4 flex justify-between">
+    <nav className="navbar 700 p-4 flex justify-between">
       <div className="navbar-brand ml-6">
-        <img src="logo.svg" alt="React logo" className="navbar-logo h-6 w-6 mr-2 inline-block" />
+        <Link to="/"><img src="logo.png" alt="logo" className="navbar-logo h-10 w-10 mr-2 inline-block" />naoya's portfolio</Link>
       </div>
       <ul className="navbar-nav flex space-x-6 mr-6">
-        <li className="nav-item text-white"><a href="/">Home</a></li>
-        <li className="nav-item text-white"><a href="/about">About</a></li>
-        <li className="nav-item text-white"><a href="/contact">Contact</a></li>
+        {navItems.map(item => (
+          <li className="nav-item" key={item.link}>
+            <Link 
+              to={`${item.link}`} 
+              onMouseEnter={() => handleMouseEnter(item.link)}
+              onMouseLeave={handleMouseLeave}
+              className={activeLink === item.link ? 'underline' : ''}
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
 };
 
 export default Navbar;
+

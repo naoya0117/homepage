@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from './api/axios';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/Home'
 import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router } from 'react-router-dom';
+import RootRouter from './routes';
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  useEffect(() => {
-    axios.get('/greeting')
-      .then(response => {
-        setGreeting(response.data.greeting);
-      })
-      .catch(error => {
-        console.error('There was an error!', error);
-      });
-  }, []);
   return (
-    <div className="App">
-      hello world
-      <p>{greeting}</p>
-    </div>
-  )
+    <Router>
+      <div style={{ margin: '0 auto', maxWidth: '1200px', padding: '0 20px' }}>
+        <Navbar />
+        <RootRouter />
+      </div>
+    </Router>
+  );
 }
 
 export default App;
