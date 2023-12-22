@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="navbar 700 p-4 flex justify-between">
+    <nav className="navbar 700 p-4 flex justify-between sticky top-0 z-50">
       <div className="navbar-brand ml-6">
         <Link to="/"><img src="logo.png" alt="logo" className="navbar-logo h-10 w-10 mr-2 inline-block" />naoya's portfolio</Link>
       </div>
@@ -42,4 +42,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-

@@ -1,12 +1,11 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "../components/Home";
 
-const RootRouter = () => {
+const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
         </Routes>
     );
 }
-export default RootRouter;
+export default AppRouter;
