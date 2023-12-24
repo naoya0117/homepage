@@ -3,10 +3,10 @@ services:
   frontend:
     build: ./docker/frontend
     ports:
-      - 3000:3000
+      - 80:${FRONT_PORT}
     volumes:
       - ./frontend:/var/www/app
-    command: bash -c "npm install && npm run start"
+    command: bash -c "npm install && PORT=${FRONT_PORT} npm run start"
   backend:
     build: ./docker/backend
     ports:
