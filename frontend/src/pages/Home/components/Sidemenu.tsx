@@ -9,7 +9,7 @@ const Sidemenu: React.FC = () => {
   ];
 
   return (
-    <div className="sidemenu flex items-center justify-center h-3/4-screen fixed top-60 right-20 z-50 bg-gray-800 text-white rounded-lg shadow-lg">
+    <div className="sidemenu flex items-center justify-center h-3/4-screen fixed top-60 right-20 bg-gray-800 text-white rounded-lg shadow-lg">
       <ul className="p-4">
         {menuItems.map(item => (
           <li key={item.link} className="mb-2">
