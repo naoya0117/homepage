@@ -3,6 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import { FaGithub, FaArrowDown } from 'react-icons/fa'; // Import the GitHub and ArrowDown icons
 import { Link } from 'react-scroll';
 import { Sidemenu } from '../components/Sidemenu';
+import { ContentLayout } from '@/components/Layout/ContentLayout';
 
 
 export const Home = () => {
@@ -22,6 +23,7 @@ export const Home = () => {
     });
 
     return (
+        <ContentLayout title="Home">
         <div className="flex flex-row justify-between">
             <div className="flex flex-col w-full">
                 <div id="about" className="flex flex-col items-center justify-center h-[80vh]">
@@ -74,5 +76,6 @@ export const Home = () => {
             </div>
             <Sidemenu />
         </div>
+        </ContentLayout>
     );
 }
