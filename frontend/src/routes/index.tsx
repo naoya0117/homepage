@@ -1,12 +1,26 @@
-import { useRoutes } from "react-router-dom";
+import { Outlet, useRoutes } from "react-router-dom";
 import { Home } from "@/features/home";
+import { MainLayout } from "@/components/Layout/MainLayout/MainLayout";
+
+const App = () => {
+    return (
+        <MainLayout>
+            <Outlet />
+        </MainLayout>
+    );
+};
 
 export const AppRoutes = () => {
     const commonRoutes = [
-        { path: '/', element: <Home /> },
+        {
+            element: <App />,
+            children: [
+                { path: '/', element: <Home /> },
+            ]
+        }
     ]
 
-    const element = useRoutes([ ...commonRoutes]);
+    const element = useRoutes(commonRoutes);
 
-    return <>{element}</>
+    return element;
 }
