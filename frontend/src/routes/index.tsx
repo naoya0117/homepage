@@ -1,6 +1,6 @@
 import { Outlet, useRoutes } from "react-router-dom";
 import { Home } from "@/features/home";
-import { MainLayout } from "@/components/Layout/MainLayout/MainLayout";
+import { MainLayout } from "@/components/Layout/MainLayout";
 
 const App = () => {
     return (
