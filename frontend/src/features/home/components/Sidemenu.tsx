@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-const Sidemenu: React.FC = () => {
+export const Sidemenu: React.FC = () => {
   const menuItems = [
     { name: 'About', link: 'about' },
     { name: 'Skill', link: 'skill' },
@@ -23,5 +23,4 @@ const Sidemenu: React.FC = () => {
   );
 };
 
-export default Sidemenu;
 

@@ -1,11 +1,12 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
+import { useRoutes } from "react-router-dom";
+import { Home } from "@/features/home";
 
-const AppRouter = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-        </Routes>
-    );
+export const AppRoutes = () => {
+    const commonRoutes = [
+        { path: '/', element: <Home /> },
+    ]
+
+    const element = useRoutes([ ...commonRoutes]);
+
+    return <>{element}</>
 }
-export default AppRouter;

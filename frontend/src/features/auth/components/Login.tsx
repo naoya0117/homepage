@@ -1,14 +1,14 @@
-import instance from '../../features/api/axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { LoginCredentials, login as loginApi } from '@/features/auth';
 
-const Login = () => {
+export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const login = async () => {
+        const credentials: LoginCredentials = { email, password };
         try {
-            await instance.get('/sanctum/csrf-cookie');
-            const response = await instance.post('/api/login', { email, password });
+            const response = await loginApi(credentials);
             console.log(response);
         } catch (error) {
             console.error(error);
@@ -28,5 +28,3 @@ const Login = () => {
         </>
     );
 }
-
-export default Login;

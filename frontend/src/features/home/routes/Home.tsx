@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { FaGithub, FaArrowDown } from 'react-icons/fa'; // Import the GitHub and ArrowDown icons
 import { Link } from 'react-scroll';
-import Sidemenu from './components/Sidemenu';
+import { Sidemenu } from '../components/Sidemenu';
 
-const Home = () => {
+
+export const Home = () => {
     const fade = useSpring({
         from: { opacity: 0 },
         to: { opacity: 1 },
@@ -34,7 +35,7 @@ const Home = () => {
                         <Link to="skill"
                             smooth={true}
                             duration={500}
-                            className="mt-5 cursor-pointer text-blue-300 transition-colors"
+                            className="mt-5 cursor-pointer text-gray-300 transition-colors"
                             onMouseEnter={() => setIsFocused(true)}
                             onMouseLeave={() => setIsFocused(false)}>
                             <animated.div style={arrowAnimation}>
@@ -68,10 +69,10 @@ const Home = () => {
                         </Link>
                     </animated.div>
                 </div>
+                <div id="history" className="flex flex-col items-center justify-center bg-blue-100 mt-5 h-[80vh]">
+                </div>
             </div>
             <Sidemenu />
         </div>
     );
 }
-
-export default Home;
