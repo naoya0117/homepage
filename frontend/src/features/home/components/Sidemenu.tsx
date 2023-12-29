@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-export const Sidemenu: React.FC = () => {
+export const Sidebar: React.FC = () => {
   const menuItems = [
     { name: 'About', link: 'about' },
     { name: 'Skill', link: 'skill' },

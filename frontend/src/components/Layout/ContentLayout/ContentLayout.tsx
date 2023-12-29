@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { Head } from '@/components/Head';
 
+type items = {
+    id: string;
+    name: string;
+};
+
 type ContentLayoutProps = {
     children: React.ReactNode;
     title: string;
+    sideitems?: items[];
 };
 
 export const ContentLayout = ({ children, title }: ContentLayoutProps) => {
