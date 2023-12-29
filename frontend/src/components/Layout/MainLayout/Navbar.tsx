@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
-import { Login } from '@/features/auth'
+import { LoginForm } from '@/features/auth'
 
 const Navbar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string | null>(null);
@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
     </nav>
     <Modal isOpen={isModalOpen} style={{ content: { width: '600px', height: '500px', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' } }}>
       <button onClick={() => setIsModalOpen(false)} className="float-right hover:underline">閉じる</button>
-      <Login/>
+      <LoginForm/>
     </Modal>
   </>
   );
