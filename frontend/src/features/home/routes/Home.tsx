@@ -3,6 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import { FaGithub, FaArrowDown } from 'react-icons/fa'; // Import the GitHub and ArrowDown icons
 import { Link } from 'react-scroll';
 import { ContentLayout } from '@/components/Layout/ContentLayout';
+import { CustomCard } from '../components/Card';
 
 
 export const Home = () => {
@@ -45,7 +46,8 @@ export const Home = () => {
                         </Link>
                     </animated.div>
                 </div>
-                <div id="skill" className="flex flex-col items-center justify-center bg-blue-100 mt-5 h-[80vh]">
+                <div className="bg-blue-100">
+                <div id="skill" className="flex flex-col items-center justify-center mt-40">
                     <animated.div style={{ ...fade, marginTop: '-50px' }} className="flex flex-col items-center justify-center">
                         <h2 className="text-center text-4xl mb-4">Skill</h2>
                         <p>最近はweb系の技術に触れています。</p>
@@ -64,13 +66,10 @@ export const Home = () => {
                             className="mt-5 cursor-pointer text-blue-300 transition-colors"
                             onMouseEnter={() => setIsFocused(true)}
                             onMouseLeave={() => setIsFocused(false)}>
-                            <animated.div style={arrowAnimation}>
-                                <FaArrowDown size={50} /> {/* ArrowDown icon */}
-                            </animated.div>
                         </Link>
                     </animated.div>
                 </div>
-                <div id="history" className="flex flex-col items-center justify-center bg-blue-100 mt-5 h-[80vh]">
+                <div id="history" className="flex flex-col items-center justify-center mt-40">
                     <h2 className="text-center text-4xl mb-4">History</h2>
                     <div className="mb-10">
                         <p>趣味でLinuxを触ったのをきっかけに技術に興味を持ちました。</p>
@@ -119,10 +118,29 @@ export const Home = () => {
                         </tbody>
                     </table>
                 </div>
-                <div>
+                <div className="flex flex-col items-center justify-center bg-blue-100 mt-40">
                     <h2 className="text-center text-4xl mb-4">Project</h2>
+                    <h3 className="text-center text-2xl mb-4 mt-4">個人開発</h3>
+                    <div className="flex flex-row flex-wrap">
+                        <CustomCard title="vim-tetris" summary="vimのモードや操作を搭載したテトリスです。viを楽しく学べるように作りました。pthreadで並列処理を行っています" techTags={['C', 'Bash', 'docker', 'ncurses', 'pthread']} />
+                        <CustomCard title="ポートフォリオ(旧)" summary="Webの勉強をするために、初めて作ったポートフォリオサイトです。Github pageでデプロイをしていました。" techTags={['Typescript', 'CSS', 'Next.js', 'Docker']} />
+                        <CustomCard title="ポートフォリオ" summary="このページです。ReactとLaravelをapi連携させており、ブログの投稿機能など動的なwebサイトにする予定です。" techTags={['Typescript', 'PHP', 'React.js', 'Laravel', 'mysql', 'Docker', 'nginx']} />
+                    </div>
+                    <h3 className="text-center text-2xl mb-4 mt-4">チーム開発</h3>
+                    <div className="flex flex-row flex-wrap">
+                        <CustomCard title="走れ!すすむくん!" summary="大学の学祭に向けて作った、ブラウザで動くプラットフォームゲームです。Phaserを使ったゲーム処理を主に担当しました。" techTags={['React.js', 'Phaser.js', 'Docker', 'Typescript']} />
+                        <CustomCard title="Minecraft Bot Contest" summary="C言語でキャラを動かすBotコンテストの機能を追加開発しました。中身はPythonで書いてあります。" techTags={['Python', 'C', 'numpy', 'Pillow']} />
+                        <CustomCard title="カレンダー" summary="所属グループ内で、予定を共有できるカレンダーアプリを開発しました。非同期で予定が最新の予定が自動で画面に反映されるようにしています。" techTags={['Spring boot', 'H2DB', 'Java', 'html', 'css']} />
+                    </div>
+                    <h3 className="text-center text-2xl mb-4 mt-4">ただの趣味</h3>
+                    <div className="flex flex-row flex-wrap">
+                        <CustomCard title="i3+Plasma デスクトップ" summary="ArchLinuxを普段使いしており、KDEのPlasmaデスクトップとタイル型wmであるi3を組み合わせて自分好みの環境を使用しています。" techTags={['Linux']} />
+                        <CustomCard title="Qemuスクリプト" summary="Windowsや他ディストリビューションの仮想環境を簡単に作れるように起動スクリプトをGitHubに保管しています。" techTags={['Linux']} />
+                        <CustomCard title="vim設定自動化" summary="仮想環境を作るたびに、vimの設定ファイルを書くのを面倒に感じたので、Bashで自動化しました。普段より、Bashを使ってPCの処理の自動化を心がけています。" techTags={['Bash', 'vim']} />
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
         </ContentLayout>
     );

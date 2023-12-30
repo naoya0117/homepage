@@ -33,7 +33,7 @@ const Navbar = () => {
             </IconButton>
           )}
           <Typography variant="h6" style={{ flexGrow: 1 }}>
-            Naoya's portfolio
+            <a href="/">Naoya's portfolio</a>
           </Typography>
           {!isMobile && items.map((item) => (
             <Button color="inherit" href={item.href}>
