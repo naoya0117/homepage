@@ -8,7 +8,7 @@ use App\Http\Controllers\LoginController;
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/greeting', [GreetingController::class, 'greeting']);
+Route::get('/greeting', [GreetingController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
