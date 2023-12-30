@@ -121,7 +121,7 @@ export const Home = () => {
                             <div className="mx-[10%]">
                                 <h3 className="text-center text-2xl mb-4 mt-4 mx-auto">個人開発</h3>
                                 <div className="flex flex-row flex-wrap mx-auto">
-                                    <CustomCard title="vim-tetris" summary="vimのモードや操作を搭載したテトリスです。viを楽しく学べるように作りました。pthreadで並列処理を行っています" techTags={['C', 'Bash', 'docker', 'ncurses', 'pthread']} repoUrl='https://github.com/naoya0117/vim_tetris.git' />
+                                    <CustomCard title="vim-tetris" summary="vimのモードや操作を搭載したテトリスです。viを楽しく学べるように作りました。pthreadで並列処理を行っています" techTags={['C', 'Bash', 'docker', 'ncurses', 'pthread']} repoUrl='https://github.com/naoya0117/vim-tetris.git' />
                                     <CustomCard title="ポートフォリオ(旧)" summary="Webの勉強をするために、初めて作ったポートフォリオサイトです。Github pageでデプロイをしていました。" techTags={['Typescript', 'CSS', 'Next.js', 'Docker']} repoUrl='https://github.com/naoya0117/nextjs_portfolio.git' />
                                     <CustomCard title="ポートフォリオ" summary="このページです。ReactとLaravelをapi連携させており、ブログの投稿機能など動的なwebサイトにする予定です。" techTags={['Typescript', 'PHP', 'React.js', 'Laravel', 'mysql', 'Docker', 'nginx']} repoUrl='https://github.com/naoya0117/homepage.git' deployUrl='https://naoya0117.com' />
                                 </div>
@@ -134,7 +134,7 @@ export const Home = () => {
                                 <h3 className="text-center text-2xl mb-4 mt-4">ただの趣味</h3>
                                 <div className="flex flex-row flex-wrap">
                                     <CustomCard title="i3+Plasma デスクトップ" summary="ArchLinuxを普段使いしており、KDEのPlasmaデスクトップとタイル型wmであるi3を組み合わせて自分好みの環境を使用しています。" techTags={['Linux']} repoUrl='https://github.com/naoya0117/plasma-i3-kwin_sessions.git' />
-                                    <CustomCard title="Qemuスクリプト" summary="Windowsや他ディストリビューションの仮想環境を簡単に作れるように起動スクリプトをGitHubに保管しています。" techTags={['Linux']} repoUrl='https://github.com/naoya0117/qemu_scripts.git' />
+                                    <CustomCard title="Qemuスクリプト" summary="Windowsや他ディストリビューションの仮想環境を簡単に作れるように起動スクリプトをGitHubに保管しています。" techTags={['Linux']} repoUrl='https://github.com/naoya0117/qemu-scripts.git' />
                                     <CustomCard title="vim設定自動化" summary="仮想環境を作るたびに、vimの設定ファイルを書くのを面倒に感じたので、Bashで自動化しました。普段より、Bashを使ってPCの処理の自動化を心がけています。" techTags={['Bash', 'vim']} repoUrl='https://github.com/naoya0117/vim_runtime.git' />
                                 </div>
                             </div>
