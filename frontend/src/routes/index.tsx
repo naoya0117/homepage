@@ -16,8 +16,8 @@ export const AppRoutes = () => {
             element: <App />,
             children: [
                 { path: '/', element: <Home /> },
-                { path: '/output', element: <div>Output</div> },
-                { path: '/blog', element: <div>Blog</div> },
+                { path: '/blog', element: <div>Blog</div>},
+                { path: '/contact', element: <div>Contact</div>},
             ]
         }
     ]
