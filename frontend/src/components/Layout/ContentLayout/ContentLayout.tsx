@@ -9,13 +9,14 @@ type items = {
 type ContentLayoutProps = {
     children: React.ReactNode;
     title: string;
-    sideitems?: items[];
+    description: string;
+    sideItems?: items[];
 };
 
-export const ContentLayout = ({ children, title }: ContentLayoutProps) => {
+export const ContentLayout = ({ children, title, description}: ContentLayoutProps) => {
     return (
         <>
-            <Head title={title} />
+            <Head title={title} description={description}/>
             <div className="flex flex-col min-h-screen">
                 <main className="flex-grow">
                     {children}
