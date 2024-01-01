@@ -17,8 +17,6 @@ export const ContentLayout = ({ children, title, description}: ContentLayoutProp
     return (
         <>
             <Head title={title} description={description} />
-            <meta property="og:title" content="Naoya's portfolio"/>
-            <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
             <div className="flex flex-col min-h-screen">
                 <main className="flex-grow">
                     {children}
