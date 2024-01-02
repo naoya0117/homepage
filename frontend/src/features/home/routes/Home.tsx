@@ -69,7 +69,7 @@ export const Home = () => {
                                 <p>現在は、プログラミングからソフトウェア設計まで幅広く学習しています</p>
                             </div>
 
-                            <table className="table-auto bg-white shadow-md rounded-lg">
+                            <table className="table-auto bg-white shadow-md rounded-lg px-5">
                                 <thead className="border-b-2 border-gray-300">
                                     <tr>
                                         <th className="px-4 py-2">年</th>
