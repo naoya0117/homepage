@@ -4,7 +4,7 @@ import { FaGithub, FaArrowDown } from 'react-icons/fa'; // Import the GitHub and
 import { Link } from 'react-scroll';
 import { ContentLayout } from '@/components/Layout/ContentLayout';
 import { CustomCard } from '../components/Card';
-
+import { MyTable } from '../components/Table';
 
 export const Home = () => {
     const fade = useSpring({
@@ -22,15 +22,25 @@ export const Home = () => {
         loop: { reverse: false },
     });
 
+    const headers = ['年', '月', '内容'];
+    const data = [
+      ['2003年', '1月', '生まれる'],
+      ['2021年', '3月', '普通科の高校を卒業'],
+      ['2021年', '4月', '情報系の学部に入学する'],
+      ['2023年', '5月', 'ゼミ配属でチーム開発を経験、webを知る'],
+      ['2023年', '8月', 'マイクラコンテスト(学生プロジェクト)に開発スタッフとして参加'],
+      ['2023年', '12月~', '長期インターンで実務のweb開発を行う']
+    ];
+
     return (
         <ContentLayout title="Home" description="大阪の大学に通う学生のポートフォリオです。">
             <div className="flex flex-row justify-between">
-                <div className="flex flex-col w-full">
-                    <div id="about" className="flex flex-col items-center justify-center h-[80vh]">
+                <div className="flex flex-col w-full px-4">
+                    <div id="about" className="flex flex-col items-center justify-center h-[80vh] max-w-[80%] mx-auto">
                         <animated.div style={{ ...fade, marginTop: '-50px' }} className="flex flex-col items-center justify-center">
-                            <p className="text-center text-4xl mb-4">Welcome to my portfolio!</p>
-                            <p>こんにちは、私は情報系の学部に通う大阪の学生です。</p>
-                            <p>webアプリの開発に興味があります。</p>
+                            <p className="text-center text-5xl mb-4 text-gray-800">Welcome to my portfolio!</p>
+                            <p className="text-lg text-gray-700">こんにちは、私は情報系の学部に通う大阪の学生です。</p>
+                            <p className="text-lg text-gray-700">webアプリの開発に興味があります。</p>
                             <a href="https://github.com/naoya0117" target="_blank" rel="noopener noreferrer" className="mt-5 transform transition-transform duration-500 hover:scale-110">
                                 <FaGithub size={50} /> {/* GitHub icon */}
                             </a>
@@ -47,7 +57,7 @@ export const Home = () => {
                         </animated.div>
                     </div>
                     <div className="bg-gray-300 py-20">
-                        <div id="skill" className="flex flex-col items-center justify-center my-30 py-40">
+                        <div id="skill" className="flex flex-col items-center justify-center my-30 py-40 max-w-[80%] mx-auto">
                             <animated.div style={{ ...fade, marginTop: '-50px' }} className="flex flex-col items-center justify-center">
                                 <h2 className="text-center text-4xl mb-4">Skill</h2>
                                 <p>最近はweb系の技術に触れています。</p>
@@ -62,55 +72,16 @@ export const Home = () => {
                                 </div>
                             </animated.div>
                         </div>
-                        <div id="history" className="flex flex-col items-center justify-center my-30 py-40">
+                        <div id="history" className="flex flex-col items-center justify-center my-30 max-w-[80%] mx-auto">
                             <h2 className="text-center text-4xl mb-4">History</h2>
                             <div className="mb-10">
                                 <p>趣味でLinuxを触ったのをきっかけに技術に興味を持ちました。</p>
                                 <p>現在は、プログラミングからソフトウェア設計まで幅広く学習しています</p>
                             </div>
 
-                            <table className="table-auto bg-white shadow-md rounded-lg px-5">
-                                <thead className="border-b-2 border-gray-300">
-                                    <tr>
-                                        <th className="px-4 py-2">年</th>
-                                        <th className="px-4 py-2">月</th>
-                                        <th className="px-4 py-2">内容</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td className="border px-4 py-2">2003年</td>
-                                        <td className="border px-4 py-2">1月</td>
-                                        <td className="border px-4 py-2">生まれる</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="border px-4 py-2">2021年</td>
-                                        <td className="border px-4 py-2">3月</td>
-                                        <td className="border px-4 py-2">静岡の普通科の高校を卒業</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="border px-4 py-2">2021年</td>
-                                        <td className="border px-4 py-2">4月</td>
-                                        <td className="border px-4 py-2">大阪の情報系の学部に入学する</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="border px-4 py-2">2023年</td>
-                                        <td className="border px-4 py-2">5月</td>
-                                        <td className="border px-4 py-2">ゼミ配属でチーム開発を経験、webを知る</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="border px-4 py-2">2023年</td>
-                                        <td className="border px-4 py-2">8月</td>
-                                        <td className="border px-4 py-2">マイクラコンテスト(学生プロジェクト)に開発スタッフとして参加</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="border px-4 py-2">2023年</td>
-                                        <td className="border px-4 py-2">12月~</td>
-                                        <td className="border px-4 py-2">長期インターンで実務のweb開発を始める</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div id="project" className="flex flex-col items-center justify-center my-30 py-40"></div>
+                            <MyTable headers={headers} data={data} className='max-w-[600px]'/>
+
+                            <div id="project" className="flex flex-col items-center justify-center py-30 max-w-[80%] mx-auto"></div>
                             <h2 className="text-center text-4xl mb-4 my-20">Project</h2>
                             <div className="mx-[10%]">
                                 <h3 className="text-center text-2xl mb-4 mt-4 mx-auto">個人開発</h3>

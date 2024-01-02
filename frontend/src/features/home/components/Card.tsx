@@ -17,7 +17,10 @@ type CustomCardProps = {
 
 export const CustomCard = ({ title, summary, techTags, repoUrl, deployUrl } : CustomCardProps) => {
     return (
-        <Box sx={{  margin: 2, width: '15rem' }}>
+        <Box sx={{  
+            margin: 2, 
+            width: { xs: '100%', sm: '20rem' }
+        }}>
             <a href={repoUrl} target="_blank" rel="noopener noreferrer">
                 <Card sx={{ 
                     '&:hover': {
