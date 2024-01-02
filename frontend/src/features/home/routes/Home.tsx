@@ -46,8 +46,8 @@ export const Home = () => {
                             </Link>
                         </animated.div>
                     </div>
-                    <div className="bg-blue-100 py-20">
-                        <div id="skill" className="flex flex-col items-center justify-center mt-40">
+                    <div className="bg-gray-300 py-20">
+                        <div id="skill" className="flex flex-col items-center justify-center my-30 py-40">
                             <animated.div style={{ ...fade, marginTop: '-50px' }} className="flex flex-col items-center justify-center">
                                 <h2 className="text-center text-4xl mb-4">Skill</h2>
                                 <p>最近はweb系の技術に触れています。</p>
@@ -60,16 +60,9 @@ export const Home = () => {
                                     <p>フレームワーク・ライブラリ</p>
                                     <img src="https://skillicons.dev/icons?i=react,nextjs,spring,laravel" alt="myskill"></img>
                                 </div>
-                                <Link to="history"
-                                    smooth={true}
-                                    duration={500}
-                                    className="mt-5 cursor-pointer text-blue-300 transition-colors"
-                                    onMouseEnter={() => setIsFocused(true)}
-                                    onMouseLeave={() => setIsFocused(false)}>
-                                </Link>
                             </animated.div>
                         </div>
-                        <div id="history" className="flex flex-col items-center justify-center mt-40">
+                        <div id="history" className="flex flex-col items-center justify-center my-30 py-40">
                             <h2 className="text-center text-4xl mb-4">History</h2>
                             <div className="mb-10">
                                 <p>趣味でLinuxを触ったのをきっかけに技術に興味を持ちました。</p>
@@ -117,7 +110,8 @@ export const Home = () => {
                                     </tr>
                                 </tbody>
                             </table>
-                            <h2 className="text-center text-4xl mb-4 mt-20">Project</h2>
+                            <div id="project" className="flex flex-col items-center justify-center my-30 py-40"></div>
+                            <h2 className="text-center text-4xl mb-4 my-20">Project</h2>
                             <div className="mx-[10%]">
                                 <h3 className="text-center text-2xl mb-4 mt-4 mx-auto">個人開発</h3>
                                 <div className="flex flex-row flex-wrap mx-auto">
@@ -138,10 +132,10 @@ export const Home = () => {
                                     <CustomCard title="vim設定自動化" summary="仮想環境を作るたびに、vimの設定ファイルを書くのを面倒に感じたので、Bashで自動化しました。普段より、Bashを使ってPCの処理の自動化を心がけています。" techTags={['Bash', 'vim']} repoUrl='https://github.com/naoya0117/vim_runtime.git' />
                                 </div>
                             </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </ContentLayout>
     );
 }
