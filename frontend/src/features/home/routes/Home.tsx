@@ -37,7 +37,7 @@ export const Home = () => {
             <div className="flex flex-row justify-between">
                 <div className="flex flex-col w-full px-4">
                     <div id="about" className="flex flex-col items-center justify-center h-[80vh] max-w-[80%] mx-auto">
-                        <animated.div style={{ ...fade, marginTop: '-50px' }} className="flex flex-col items-center justify-center">
+                        <animated.div style={{ ...fade, marginTop: '50px' }} className="flex flex-col items-center justify-center">
                             <p className="text-center text-5xl mb-4 text-gray-800">Welcome to my portfolio!</p>
                             <p className="text-lg text-gray-700">こんにちは、私は情報系の学部に通う大阪の学生です。</p>
                             <p className="text-lg text-gray-700">webアプリの開発に興味があります。</p>
