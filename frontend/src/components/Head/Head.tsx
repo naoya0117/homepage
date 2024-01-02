@@ -20,7 +20,6 @@ export const Head = ({title = '', description = ''}:HeadProps= {}) => {
         {property: 'og:image', content: 'https://naoya.com/logo.png'},
       ]}
     >
-      <meta name="description" content={description} />
     </Helmet>
   );
 

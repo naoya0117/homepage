@@ -25,7 +25,7 @@ services:
     volumes:
         entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 10d & wait $${!}; done;'"
     volumes:
-      - ./docker/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
       - ./frontend/build:/var/www/app
     command: ["--version"]
   db:
