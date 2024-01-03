@@ -18,7 +18,7 @@ export const ContentLayout = ({ children, title, description}: ContentLayoutProp
         <>
             <Head title={title} description={description} />
             <div className="flex flex-col min-h-screen">
-                <main className="flex-grow">
+                <main className="flex-grow min-w-screen">
                     {children}
                 </main>
             </div>
