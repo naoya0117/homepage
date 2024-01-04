@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { FaGithub, FaArrowDown } from 'react-icons/fa'; // Import the GitHub and ArrowDown icons
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 import { ContentLayout } from '@/components/Layout/ContentLayout';
 import { CustomCard } from '../components/Card';
 import { MyTable } from '../components/Table';
@@ -25,12 +26,12 @@ export const Home = () => {
 
     const headers = ['年', '月', '内容'];
     const data = [
-      ['2003年', '1月', '生まれる'],
-      ['2021年', '3月', '普通科の高校を卒業'],
-      ['2021年', '4月', '情報系の学部に入学する'],
-      ['2023年', '5月', 'ゼミ配属でチーム開発を経験、webを知る'],
-      ['2023年', '8月', 'マイクラコンテスト(学生プロジェクト)に開発スタッフとして参加'],
-      ['2023年', '12月~', '長期インターンで実務のweb開発を行う']
+        ['2003年', '1月', '生まれる'],
+        ['2021年', '3月', '普通科の高校を卒業'],
+        ['2021年', '4月', '情報系の学部に入学する'],
+        ['2023年', '5月', 'ゼミ配属でチーム開発を経験、webを知る'],
+        ['2023年', '8月', 'マイクラコンテスト(学生プロジェクト)に開発スタッフとして参加'],
+        ['2023年', '12月~', '長期インターンで実務のweb開発を行う']
     ];
 
     return (
@@ -40,13 +41,13 @@ export const Home = () => {
                     <div id="about" className="flex flex-col items-center justify-center h-[80vh] max-w-[90%] mx-auto">
                         <animated.div style={{ ...fade, marginTop: '50px' }} className="flex flex-col items-center justify-center">
                             <div className="max-w-[350px]">
-                            <p className="text-center mb-4 text-gray-800 text-2xl">Welcome to my portfolio!</p>
-                            <p className="text-lg text-gray-700">こんにちは、私は情報系の学部に通う大阪の学生です。webアプリの開発に興味があります。</p>
+                                <p className="text-center mb-4 text-gray-800 text-2xl">Welcome to my portfolio!</p>
+                                <p className="text-lg text-gray-700">こんにちは、私は情報系の学部に通う大阪の学生です。webアプリの開発に興味があります。</p>
                             </div>
                             <a href="https://github.com/naoya0117" target="_blank" rel="noopener noreferrer" className="mt-5 transform transition-transform duration-500 hover:scale-110">
                                 <FaGithub size={50} /> {/* GitHub icon */}
                             </a>
-                            <Link to="skill"
+                            <ScrollLink to="skill"
                                 smooth={true}
                                 duration={500}
                                 className="mt-5 cursor-pointer text-gray-300 transition-colors"
@@ -55,7 +56,7 @@ export const Home = () => {
                                 <animated.div style={arrowAnimation}>
                                     <FaArrowDown size={50} /> {/* ArrowDown icon */}
                                 </animated.div>
-                            </Link>
+                            </ScrollLink>
                         </animated.div>
                     </div>
                     <div className="bg-gray-200 py-20 m-0">
@@ -66,7 +67,7 @@ export const Home = () => {
                                 <p>いろんな分野に手を出していきたいと思っています。</p>
                                 <div className="mt-10 text-center items-center flex flex-col justify-center">
                                     <p>開発環境</p>
-                                    <SkillIcon name={['git', 'linux', 'docker', 'vim', 'vscode', 'idea' ]} />
+                                    <SkillIcon name={['git', 'linux', 'docker', 'vim', 'vscode', 'idea']} />
                                     <p>言語</p>
                                     <SkillIcon name={['c', 'java', 'bash', 'py', 'ts', 'html', 'css', 'php', 'tailwind', 'postgres', 'mysql']} />
                                     <p>フレームワーク・ライブラリ</p>
@@ -80,10 +81,9 @@ export const Home = () => {
                                 <p>趣味でLinuxを触ったのをきっかけに技術に興味を持ちました。</p>
                                 <p>現在は、プログラミングからソフトウェア設計まで幅広く学習しています</p>
                             </div>
-
-                            <MyTable headers={headers} data={data} className='max-w-[600px]'/>
-
-                            <div id="project" className="flex flex-col items-center justify-center py-30 mx-auto"></div>
+                            <MyTable headers={headers} data={data} className='max-w-[600px]' />
+                        </div>
+                        <div id="project" className="flex flex-col items-center justify-center py-30 mx-auto">
                             <h2 className="text-center text-3xl mb-4 my-20">Project</h2>
                             <p>自分が過去にかかわったプロジェクトについてまとめておきます</p>
                             <div>
@@ -106,10 +106,19 @@ export const Home = () => {
                                     <CustomCard title="vim設定自動化" summary="仮想環境を作るたびに、vimの設定ファイルを書くのを面倒に感じたので、Bashで自動化しました。普段より、Bashを使ってPCの処理の自動化を心がけています。" techTags={['Bash', 'vim']} repoUrl='https://github.com/naoya0117/vim_runtime.git' />
                                 </div>
                             </div>
+                            <div id="contact" className="flex flex-col items-center justify-center py-30 mx-auto">
+                                <h2 className="text-center text-3xl mb-4 my-20">Contact</h2>
+                                <p>お問い合わせはこちらからお願いします。</p>
+                                <div className="flex flex-row justify-center my-10">
+                                    <RouterLink to="/contact" className="text-center text-3xl mb-4 my-20 hover:text-blue-800 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-md">
+                                        お問い合わせ
+                                    </RouterLink>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </ContentLayout>
+        </ContentLayout >
     );
 }
