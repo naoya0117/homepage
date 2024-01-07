@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { FaGithub, FaArrowDown } from 'react-icons/fa'; // Import the GitHub and ArrowDown icons
+import { FaGithub, FaArrowDown } from 'react-icons/fa';
+import { IoMail } from 'react-icons/io5';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { ContentLayout } from '@/components/Layout/ContentLayout';
 import { CustomCard } from '../components/Card';
 import { MyTable } from '../components/Table';
-import { SkillIcon } from '../components/Skillicon';
+import { SkillIcon } from '../components/Skillicon'
+import { CustomButton } from '@/components/Elements/Button';
+
 
 export const Home = () => {
     const fade = useSpring({
@@ -24,15 +27,6 @@ export const Home = () => {
         loop: { reverse: false },
     });
 
-    const headers = ['年', '月', '内容'];
-    const data = [
-        ['2003年', '1月', '生まれる'],
-        ['2021年', '3月', '普通科の高校を卒業'],
-        ['2021年', '4月', '情報系の学部に入学する'],
-        ['2023年', '5月', 'ゼミ配属でチーム開発を経験、webを知る'],
-        ['2023年', '8月', 'マイクラコンテスト(学生プロジェクト)に開発スタッフとして参加'],
-        ['2023年', '12月~', '長期インターンで実務のweb開発を行う']
-    ];
 
     return (
         <ContentLayout title="Home" description="大阪の大学に通う学生のポートフォリオです。">
@@ -44,9 +38,14 @@ export const Home = () => {
                                 <p className="text-center mb-4 text-gray-800 text-2xl">Welcome to my portfolio!</p>
                                 <p className="text-lg text-gray-700">こんにちは、私は情報系の学部に通う大阪の学生です。webアプリの開発に興味があります。</p>
                             </div>
-                            <a href="https://github.com/naoya0117" target="_blank" rel="noopener noreferrer" className="mt-5 transform transition-transform duration-500 hover:scale-110">
-                                <FaGithub size={50} /> {/* GitHub icon */}
-                            </a>
+                            <div className='flex flex-row justify-center'>
+                                <a href="https://github.com/naoya0117" target="_blank" rel="noopener noreferrer" className="mt-5 transform transition-transform duration-500 hover:scale-110 p-5">
+                                    <FaGithub size={50} /> {/* GitHub icon */}
+                                </a>
+                                <a href="mailto:n-matsuhashi@naoya0117.com" className="mt-5 transform transition-transform duration-500 hover:scale-110 p-5">
+                                    <IoMail size={50} /> {/* Mail icon */}
+                                </a>
+                            </div>
                             <ScrollLink to="skill"
                                 smooth={true}
                                 duration={500}
@@ -71,7 +70,7 @@ export const Home = () => {
                                     <p>言語</p>
                                     <SkillIcon name={['c', 'java', 'bash', 'py', 'ts', 'html', 'css', 'php', 'tailwind', 'postgres', 'mysql']} />
                                     <p>フレームワーク・ライブラリ</p>
-                                    <img className="p-4" src="https://skillicons.dev/icons?i=react,nextjs,spring,laravel" alt="myskill"></img>
+                                    <SkillIcon name={['react', 'nextjs', 'spring', 'laravel']} />
                                 </div>
                             </animated.div>
                         </div>
@@ -81,7 +80,14 @@ export const Home = () => {
                                 <p>趣味でLinuxを触ったのをきっかけに技術に興味を持ちました。</p>
                                 <p>現在は、プログラミングからソフトウェア設計まで幅広く学習しています</p>
                             </div>
-                            <MyTable headers={headers} data={data} className='max-w-[600px]' />
+                            <MyTable headers={['年', '月', '内容']} data={[
+                                ['2003年', '1月', '生まれる'],
+                                ['2021年', '3月', '普通科の高校を卒業'],
+                                ['2021年', '4月', '情報系の学部に入学する'],
+                                ['2023年', '5月', 'ゼミ配属でチーム開発を経験、webを知る'],
+                                ['2023年', '8月', 'マイクラコンテスト(学生プロジェクト)に開発スタッフとして参加'],
+                                ['2023年', '12月~', '長期インターンで実務のweb開発を行う']
+                            ]} className='max-w-[600px]' />
                         </div>
                         <div id="project" className="flex flex-col items-center justify-center py-30 mx-auto">
                             <h2 className="text-center text-3xl mb-4 my-20">Project</h2>
@@ -101,8 +107,8 @@ export const Home = () => {
                                 </div>
                                 <h3 className="text-leftr text-2xl m-4">ただの趣味</h3>
                                 <div className="flex flex-row flex-wrap">
-                                    <CustomCard title="i3+Plasma デスクトップ" summary="ArchLinuxを普段使いしており、KDEのPlasmaデスクトップとタイル型wmであるi3を組み合わせて自分好みの環境を使用しています。" techTags={['Linux']} repoUrl='https://github.com/naoya0117/plasma-i3-kwin_sessions.git' />
-                                    <CustomCard title="Qemuスクリプト" summary="Windowsや他ディストリビューションの仮想環境を簡単に作れるように起動スクリプトをGitHubに保管しています。" techTags={['Linux']} repoUrl='https://github.com/naoya0117/qemu-scripts.git' />
+                                    <CustomCard title="i3+Plasma デスクトップ" summary="ArchLinuxを普段使いしており、KDEのPlasmaデスクトップとタイル型wmであるi3を組み合わせて自分好みの環境を使用しています。" techTags={['Linux', 'Bash']} repoUrl='https://github.com/naoya0117/plasma-i3-kwin_sessions.git' />
+                                    <CustomCard title="Qemuスクリプト" summary="Windowsや他ディストリビューションの仮想環境を簡単に作れるように起動スクリプトをGitHubに保管しています。" techTags={['Linux', 'Bash', 'Qemu']} repoUrl='https://github.com/naoya0117/qemu-scripts.git' />
                                     <CustomCard title="vim設定自動化" summary="仮想環境を作るたびに、vimの設定ファイルを書くのを面倒に感じたので、Bashで自動化しました。普段より、Bashを使ってPCの処理の自動化を心がけています。" techTags={['Bash', 'vim']} repoUrl='https://github.com/naoya0117/vim_runtime.git' />
                                 </div>
                             </div>
@@ -110,9 +116,9 @@ export const Home = () => {
                                 <h2 className="text-center text-3xl mb-4 my-20">Contact</h2>
                                 <p>お問い合わせはこちらからお願いします。</p>
                                 <div className="flex flex-row justify-center my-10">
-                                    <RouterLink to="/contact" className="text-center text-3xl mb-4 my-20 hover:text-blue-800 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-md">
+                                    <CustomButton to='/contact'>
                                         お問い合わせ
-                                    </RouterLink>
+                                    </CustomButton>
                                 </div>
                             </div>
                         </div>
