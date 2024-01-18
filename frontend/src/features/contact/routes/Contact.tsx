@@ -1,3 +1,4 @@
+import { TextArea } from '@/components/Elements/Button/TextArea';
 import { Form } from '@/components/Elements/Form';
 import { ContentLayout } from '@/components/Layout/ContentLayout';
 
@@ -9,7 +10,7 @@ export const Contact = () => {
             <p>以下のフォームから何でもお問い合わせください</p>
             <Form>
                 <input type="text" placeholder="名前" />
-                <textarea/>
+                <TextArea/>
                 <button type="submit">送信</button>
             </Form>
         </ContentLayout >

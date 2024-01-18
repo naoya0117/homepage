@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import { Link as RouterLink } from 'react-router-dom';
 
-interface CustomButtonProps {
+type CustomButtonProps = {
     children: React.ReactNode;
     to: string;
     variant?: 'text' | 'outlined' | 'contained';
