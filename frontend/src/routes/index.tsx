@@ -1,5 +1,6 @@
 import { Outlet, useRoutes } from "react-router-dom";
 import { Home } from "@/features/home";
+import { Contact } from "@/features/contact";
 import { MainLayout } from "@/components/Layout/MainLayout";
 
 const App = () => {
@@ -17,7 +18,7 @@ export const AppRoutes = () => {
             children: [
                 { path: '/', element: <Home /> },
                 { path: '/blog', element: <div>Blog</div>},
-                { path: '/contact', element: <div>Contact</div>},
+                { path: '/contact', element: <Contact />},
             ]
         }
     ]
