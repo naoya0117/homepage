@@ -6,6 +6,6 @@ type email = {
     content: string;
 }
 
-export const send = (content : email ) => {
-    return axios.post('/email/send', content);
+export const sendEmail = (data : email ) => {
+    return axios.post('/api/email/send', data);
 }

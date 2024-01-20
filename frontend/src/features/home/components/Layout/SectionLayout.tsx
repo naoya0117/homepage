@@ -11,7 +11,7 @@ export const SectionLayout = ({ id, className, title, description, children }: S
         <div id={id} className={`flex flex-col items-center justify-center max-w-[90%] mx-auto py-32 ${className}`}>
             {title || description ? (
                 <div className="flex flex-col sm:m-20 sm:flex-row">
-                    <h2 className="text-3xl mr-8 py-8 sm:py-0">{title}</h2>
+                    <h2 className="text-3xl mr-8 pj-8 sm:py-0">{title}</h2>
                     <p className="max-w-[400px] whitespace-normal">{description}</p>
                 </div>
             ): null}

@@ -2,6 +2,7 @@ import { SectionLayout } from "../Layout/SectionLayout";
 import { FaGithub, FaArrowDown } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { useState } from "react";
 import { FadeIn } from "@/features/animations";
@@ -26,9 +27,9 @@ export const AboutSection = () => {
                     <a href="https://github.com/naoya0117" className="mt-5 transform transition-transform duration-500 hover:scale-110 p-5">
                         <FaGithub size={50} /> {/* GitHub icon */}
                     </a>
-                    <a href="mailto:n-matsuhashi@naoya0117.com" className="mt-5 transform transition-transform duration-500 hover:scale-110 p-5">
+                    <RouterLink to="/contact" className="mt-5 transform transition-transform duration-500 hover:scale-110 p-5">
                         <IoMail size={50} /> {/* Mail icon */}
-                    </a>
+                    </RouterLink>
                 </div>
                 <ScrollLink to="skill"
                     smooth={true}

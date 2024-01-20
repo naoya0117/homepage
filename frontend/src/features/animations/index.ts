@@ -1,1 +1,1 @@
-export * from './FadeIn';
+export * from './components/FadeIn';
