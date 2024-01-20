@@ -7,7 +7,7 @@ type FormProps = {
 
 export const Form = ({ children, className, onSubmit }: FormProps) => {
     return (
-        <form className={`flex flex-col items-center justify-center ${className}`} onSubmit={onSubmit}>
+        <form className={`flex flex-col justify-center ${className}`} onSubmit={onSubmit}>
             {children}
         </form>
     );

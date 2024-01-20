@@ -1,4 +1,5 @@
 import { MyTable } from "../Elements";
+import { SectionLayout } from "../Layout";
 export const HistorySection = () => {
     const History = {
         headers: ['年', '月', '内容'],
@@ -11,15 +12,14 @@ export const HistorySection = () => {
             ['2023年', '12月~', '長期インターンで実務のweb開発を行う']
         ]
     }
-    
+
     return (
-        <div id="history" className="flex flex-col items-center justify-center my-30 max-w-[90%] mx-auto">
-            <h2 className="text-center text-3xl mb-4">History</h2>
-            <div className="mb-10">
-                <p>趣味でLinuxを触ったのをきっかけに技術に興味を持ちました。</p>
-                <p>現在は、プログラミングからソフトウェア設計まで幅広く学習しています</p>
-            </div>
-            <MyTable headers={History.headers} data={History.data} className="max-w-[700px]"/>
-        </div>
+        <SectionLayout
+            id="history"
+            title="History"
+            description="趣味でLinuxを触ったのをきっかけに技術に興味を持ちました。現在は、プログラミングからソフトウェア設計まで幅広く学習しています。"
+        >
+            <MyTable headers={History.headers} data={History.data} className="max-w-[700px]" />
+        </SectionLayout>
     );
 }

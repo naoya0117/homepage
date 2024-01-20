@@ -1,4 +1,5 @@
 import { CustomCard } from "../Elements"
+import { SectionLayout } from "../Layout"
 
 export const ProjectSection = () => {
     const ProjectCategories = [
@@ -18,7 +19,7 @@ export const ProjectSection = () => {
                     repoUrl: 'https://github.com/naoya0117/nextjs_portfolio'
                 },
                 {
-                    title : 'ポートフォリオ',
+                    title: 'ポートフォリオ',
                     summary: 'このページです。ReactとLaravelをapi連携させており、ブログの投稿機能など動的なwebサイトにする予定です。',
                     techTags: ['Typescript', 'PHP', 'React.js', 'Laravel', 'mysql', 'Docker', 'nginx'],
                     repoUrl: 'https://github.com/naoya0117/homepage',
@@ -57,7 +58,7 @@ export const ProjectSection = () => {
                     title: 'i3+Plasma デスクトップ',
                     summary: 'ArchLinuxを普段使いしており、KDEのPlasmaデスクトップとタイル型wmであるi3を組み合わせて自分好みの環境を使用しています。',
                     techTags: ['Linux', 'Bash'],
-                    repoUrl: 'https://github.com/naoya0117/plasma-i3-kwin_sessions'               
+                    repoUrl: 'https://github.com/naoya0117/plasma-i3-kwin_sessions'
                 },
                 {
                     title: 'Qemuスクリプト',
@@ -76,23 +77,25 @@ export const ProjectSection = () => {
     ]
 
     return (
-    <div id="project" className="flex flex-col items-center justify-center py-30 mx-auto">
-        <h2 className="text-center text-3xl mb-4 my-20">Project</h2>
-        <p>自分が過去にかかわったプロジェクトについてまとめておきます</p>
-        <div className="items-center">
-            {
-                ProjectCategories.map((category, index) => (
-                    <div key={index} className="flex flex-col items-center justify-center my-30 max-w-[90%] mx-auto">
-                        <h3 className="text-left text-2xl m-4">{category.title}</h3>
-                        <div className="flex flex-row items-start flex-wrap mx-auto xl:w-[1008px] md:w-[672px] sm:w-[336px]">
-                            {category.projects.map((project, index) => (
-                                <CustomCard key={index} title={project.title} summary={project.summary} techTags={project.techTags} repoUrl={project.repoUrl} deployUrl={project.deployUrl}/>
-                            ))}
+        <SectionLayout
+            id="project"
+            title="Project"
+            description="自分が過去にかかわったプロジェクトについてまとめておきます。"
+        >
+            <div className="items-center">
+                {
+                    ProjectCategories.map((category, index) => (
+                        <div key={index} className="flex flex-col justify-center my-30 max-w-[90%] mx-auto">
+                            <h3 className="text-left text-2xl m-10">{category.title}</h3>
+                            <div className="flex flex-row items-start flex-wrap mx-auto xl:w-[1008px] md:w-[672px] sm:w-[336px]">
+                                {category.projects.map((project, index) => (
+                                    <CustomCard key={index} title={project.title} summary={project.summary} techTags={project.techTags} repoUrl={project.repoUrl} deployUrl={project.deployUrl} />
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                ))
-            }
-        </div>
-    </div>
+                    ))
+                }
+            </div>
+        </SectionLayout>
     )
 }
