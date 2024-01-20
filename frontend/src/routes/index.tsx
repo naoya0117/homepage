@@ -1,7 +1,7 @@
 import { Outlet, useRoutes } from "react-router-dom";
-import { Home } from "@/features/home";
-import { Contact } from "@/features/contact";
-import { MainLayout } from "@/components/Layout/MainLayout";
+import { Home } from "@/pages/home";
+import { Contact } from "@/pages/contact";
+import { MainLayout } from "@/components/Layout";
 
 const App = () => {
     return (

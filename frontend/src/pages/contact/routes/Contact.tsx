@@ -1,6 +1,6 @@
-import { TextArea } from '@/components/Elements/Button/TextArea';
+import { TextArea } from '@/components/Elements/Form';
 import { Form } from '@/components/Elements/Form';
-import { ContentLayout } from '@/components/Layout/ContentLayout';
+import { ContentLayout } from '@/components/Layout';
 
 export const Contact = () => {
     return (

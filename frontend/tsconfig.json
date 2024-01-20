@@ -23,7 +23,8 @@
   },
   "include": [
     "src"
-, "src/features/home/routes/.tsx.tsx"  ],
+  , "src/pages/home/routes/.tsx.tsx"  
+  ],
   "exclude": [
     "node_modules"
   ],
