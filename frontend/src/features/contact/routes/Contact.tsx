@@ -1,15 +1,8 @@
 import { useState } from 'react';
-import { Form, TextArea } from '@/components/Elements';
-import { Submit } from '@/components/Elements/Form/Submit';
-import { TextInput } from '@/components/Elements/Form/TextInput';
+import { Form, TextArea, TextInput, Submit } from '@/components/Form';
 import { ContentLayout } from '@/components/Layout';
-import { sendEmail } from '../api/sendEmail';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
+import { sendEmail } from '../api';
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@mui/material';
 
 export const Contact = () => {
     const [name, setName] = useState('');
@@ -41,7 +34,7 @@ export const Contact = () => {
             <div className="max-w-[400px] py-8">
                 <p>ご訪問ありがとうございます。以下のフォームからなんでもお問い合わせください。</p>
             </div>
-            <Form className=" w-[80%] max-w-[600px]" onSubmit={handleSubmit}>
+            <Form className="w-[80%] max-w-[600px]" onSubmit={handleSubmit}>
                <label htmlFor='name'>お名前</label>
                 <TextInput id="お名前" placeholder="鈴木 太郎" className="my-4" value={name} onChange={e => setName(e.target.value)} />
                 <label htmlFor='email'>メールアドレス</label>

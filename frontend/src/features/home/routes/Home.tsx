@@ -1,4 +1,4 @@
-import { ContentLayout } from '@/components/Layout/ContentLayout';
+import { ContentLayout } from '@/components/Layout';
 import { AboutSection, SkillSection, HistorySection, ProjectSection, ContactSection } from '../components/Sections';
 
 export const Home = () => {

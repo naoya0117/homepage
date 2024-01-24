@@ -1,5 +1,5 @@
 import { SectionLayout } from "../Layout"
-import { SkillIcon } from "../Elements/Skillicon"
+import { SkillIcon } from "../Elements"
 
 export const SkillSection = () => {
     const Skills = [

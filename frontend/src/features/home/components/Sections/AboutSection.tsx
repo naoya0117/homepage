@@ -5,7 +5,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { useState } from "react";
-import { FadeIn } from "@/features/animations";
+import { FadeIn } from "@/components/Animations";
 
 export const AboutSection = () => {
     const [isFocused, setIsFocused] = useState(false);
