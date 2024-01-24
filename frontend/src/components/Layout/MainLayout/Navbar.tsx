@@ -55,9 +55,11 @@ const Navbar = () => {
             <a href="/">Naoya's portfolio</a>
           </Typography>
           {!isMobile && items.map((item) => (
-            <Button color="inherit">
-              <Link to={item.href}>{item.name}</Link>
-            </Button>
+              <Link to={item.href}>
+                <Button color="inherit">
+                  {item.name}
+                </Button>
+              </Link>
           ))}
           <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             <MoreVertIcon style={{ color: 'white' }} />
