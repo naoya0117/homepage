@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, TextArea, TextInput, Submit } from '@/components/Form';
+import { Form, TextArea, Input } from '@/components/Form';
 import { ContentLayout } from '@/components/Layout';
 import { sendEmail } from '../api';
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@mui/material';
@@ -36,12 +36,12 @@ export const Contact = () => {
             </div>
             <Form className="w-[80%] max-w-[600px]" onSubmit={handleSubmit}>
                <label htmlFor='name'>お名前</label>
-                <TextInput id="お名前" placeholder="鈴木 太郎" className="my-4" value={name} onChange={e => setName(e.target.value)} />
+                <Input type="text" id="お名前" placeholder="鈴木 太郎" className="my-4" value={name} onChange={e => setName(e.target.value)} />
                 <label htmlFor='email'>メールアドレス</label>
-                <TextInput id="メールアドレス" placeholder="example@naoya0117.com" className="my-4" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                <Input type="email" id="メールアドレス" placeholder="example@naoya0117.com" className="my-4" value={email} onChange={e => setEmail(e.target.value)} />
                 <label htmlFor='message'>お問い合わせ内容</label>
                 <TextArea className='my-4' id='お問い合わせ内容' placeholder='お問い合わせ内容を入力してください。' value={content} onChange={e => setContent(e.target.value)} />
-                <Submit value="送信"></Submit>
+                <Input type="submit" value="送信"></Input>
             </Form>
             <Dialog
                 open={dialogOpen}
