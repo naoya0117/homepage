@@ -55,7 +55,7 @@ const Navbar = () => {
             <a href="/">Naoya's portfolio</a>
           </Typography>
           {!isMobile && items.map((item) => (
-            <Button color="inherit" href={item.href}>
+            <Button color="inherit">
               <Link to={item.href}>{item.name}</Link>
             </Button>
           ))}
