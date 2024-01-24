@@ -1,7 +1,7 @@
 import { Outlet, useRoutes } from "react-router-dom";
 import { Home } from "@/features/home";
-import { Contact } from "@/features/contact";
 import { Blog } from "@/features/blog";
+import { Contact } from "@/features/contact";
 import { MainLayout } from "@/components/Layout";
 
 const App = () => {
@@ -24,7 +24,5 @@ export const AppRoutes = () => {
         }
     ]
 
-    const element = useRoutes(commonRoutes);
-
-    return element;
+    return useRoutes(commonRoutes);
 }

@@ -85,7 +85,7 @@ export const ProjectSection = () => {
             <div className="items-center">
                 {
                     ProjectCategories.map((category, index) => (
-                        <div key={index} className="flex flex-col justify-center my-30 max-w-[90%] mx-auto">
+                        <div key={index} className="flex flex-col justify-center my-30 max-w-[100%] mx-auto">
                             <h3 className="text-left text-2xl my-10">{category.title}</h3>
                             <div className="flex flex-row items-start flex-wrap mx-auto xl:w-[1008px] md:w-[672px] sm:w-[336px]">
                                 {category.projects.map((project, index) => (

@@ -16,16 +16,11 @@ const basePropsMap: BasePropsMap = {
 };
 
 const getBaseProps = (type?: string): BaseProps => {
-    let basePropsKey = 'default';
-    if (type !== undefined && type in basePropsMap) {
-        basePropsKey = type;
-    }
+    const basePropsKey = type !== undefined && type in basePropsMap ? type : 'default';
     return basePropsMap[basePropsKey];
 }
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-    className?: string;
-}
+type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = ({ className = '', type, ...props }: InputProps) => {
     const baseProps = getBaseProps(type);
