@@ -22,6 +22,7 @@ const getBaseProps = (type?: string): BaseProps => {
     }
     return basePropsMap[basePropsKey];
 }
+
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     className?: string;
 }
