@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Button, MenuItem, useMediaQuery, useTheme, Drawer, Menu, Dialog, DialogTitle, DialogContent, duration } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { animateScroll } from 'react-scroll';
 import { LoginForm } from '@/features/auth';
 
@@ -16,14 +16,15 @@ const NavItem = ({ href, name}:NavItemProps) => {
   const navigate = useNavigate();
   const active = location.pathname === href;
   const className = active ? 'text-gray-100' : 'text-gray-500 hover:text-gray-100';
+  const handleNavigation = () => {
+    if (active) {
+      animateScroll.scrollToTop();
+      return;
+    }
+    navigate(href);
+  }
   return (
-    <Button color="inherit" onClick={()=> {
-      if (active) {
-        animateScroll.scrollToTop([duration]);
-        return;
-      }
-      navigate(href);
-    }}>
+    <Button color="inherit" onClick={handleNavigation}>
       <span className={`${className} transition-all duration-500 ease-in-out`}>{name}</span>
     </Button>
   );
