@@ -15,7 +15,6 @@ export const Contact = () => {
         e.preventDefault();
         try {
             const response = await sendEmail({ name, email, content });
-            console.log(response);
             setDialogMessage('メールが正常に送信されました。');
             setName('');
             setEmail('');
@@ -31,7 +30,7 @@ export const Contact = () => {
         <ContentLayout title="Contact" description="大阪の大学に通う学生のポートフォリオです。">
             <div className="flex flex-col items-center">
                 <h1 className='text-3xl'>Contact</h1>
-                <div className="max-w-[400px] py-8">
+                <div className="max-w-[500px] p-8">
                     <p>ご訪問ありがとうございます。以下のフォームからなんでもお問い合わせください。</p>
                 </div>
                 <Form className="w-[80%] max-w-[600px]" onSubmit={handleSubmit}>
