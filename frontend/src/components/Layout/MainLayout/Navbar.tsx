@@ -1,40 +1,46 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Button, MenuItem, useMediaQuery, useTheme, Drawer, Menu, Dialog, DialogTitle, DialogContent } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, Button, MenuItem, useMediaQuery, useTheme, Drawer, Menu, Dialog, DialogTitle, DialogContent, duration } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import { animateScroll } from 'react-scroll';
 import { LoginForm } from '@/features/auth';
+
+type NavItemProps = {
+  href: string;
+  name: string;
+}
+
+const NavItem = ({ href, name}:NavItemProps) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const active = location.pathname === href;
+  const className = active ? 'text-gray-100' : 'text-gray-500 hover:text-gray-100';
+  return (
+    <Button color="inherit" onClick={()=> {
+      if (active) {
+        animateScroll.scrollToTop([duration]);
+        return;
+      }
+      navigate(href);
+    }}>
+      <span className={`${className} transition-all duration-500 ease-in-out`}>{name}</span>
+    </Button>
+  );
+}
+
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
-    setDrawerOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setDrawerOpen(false);
-  };
-
-  const handleClick = (event: any) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleCloseDialog = () => {
-    setOpen(false);
-  };
+  const handleDrawerOpen = () => setDrawerOpen(true);
+  const handleDrawerClose = () => setDrawerOpen(false);
+  const handleClick = (event: any) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+  const toggleDialog = () => setOpen(!open);
 
   const items = [
     { name: 'Home', href: '/' },
@@ -55,11 +61,7 @@ const Navbar = () => {
             <a href="/">Naoya's portfolio</a>
           </Typography>
           {!isMobile && items.map((item) => (
-              <Link to={item.href}>
-                <Button color="inherit">
-                  {item.name}
-                </Button>
-              </Link>
+            <NavItem href={item.href} name={item.name} />
           ))}
           <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             <MoreVertIcon style={{ color: 'white' }} />
@@ -71,9 +73,9 @@ const Navbar = () => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClickOpen}>Login</MenuItem>
+            <MenuItem onClick={toggleDialog}>Login</MenuItem>
           </Menu>
-          <Dialog open={open} onClose={handleCloseDialog}>
+          <Dialog open={open} onClose={toggleDialog}>
             <DialogTitle>Login</DialogTitle>
             <DialogContent>
               <LoginForm />
