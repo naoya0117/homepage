@@ -30,7 +30,7 @@ const NavItem = ({ href, name}:NavItemProps) => {
   );
 }
 
-const Navbar = () => {
+export const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -100,5 +100,3 @@ const Navbar = () => {
     </div>
   );
 }
-
-export default Navbar;
