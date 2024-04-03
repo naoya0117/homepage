@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class WhitelistHostnames
 {
@@ -11,6 +12,7 @@ class WhitelistHostnames
     {
         // 許可されたホスト名のリストを.envファイルから取得
         $allowedHostnames = explode(',', config('app.whitelist_hostnames'));
+	
 
         // リクエストのホスト名を取得
         $requestHostname = $request->getHost();

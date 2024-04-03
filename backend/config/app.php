@@ -185,4 +185,6 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'whitelist_hostnames' => env('APP_WHITELIST_HOSTNAMES', 'Laravel'),
+
 ];
