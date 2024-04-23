@@ -7,29 +7,3 @@ services:
     volumes:
       - ./frontend:/var/www/app
     command: bash -c "npm install && PORT=80 npm run start"
-  backend:
-    build: ./docker/backend
-    ports:
-      - 8000:8000
-    volumes:
-      - ./backend:/var/www/app
-    command: bash -c "composer install && php artisan serve --host=0.0.0.0"
-  db:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - app-data:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - 8080:80
-    environment:
-      MYSQL_USERNAME: ${DB_USERNAME}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      PMA_HOST: ${DB_HOST}
-volumes:
-  app-data:
