@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/homepage/hogehoge/static/css/main.2a096292.css",
-    "main.js": "/homepage/hogehoge/static/js/main.2057b6e8.js",
-    "static/js/787.0f8d78ff.chunk.js": "/homepage/hogehoge/static/js/787.0f8d78ff.chunk.js",
-    "index.html": "/homepage/hogehoge/index.html",
-    "main.2a096292.css.map": "/homepage/hogehoge/static/css/main.2a096292.css.map",
-    "main.2057b6e8.js.map": "/homepage/hogehoge/static/js/main.2057b6e8.js.map",
-    "787.0f8d78ff.chunk.js.map": "/homepage/hogehoge/static/js/787.0f8d78ff.chunk.js.map"
+    "main.css": "/homepage/static/css/main.2a096292.css",
+    "main.js": "/homepage/static/js/main.a122b0be.js",
+    "static/js/787.0f8d78ff.chunk.js": "/homepage/static/js/787.0f8d78ff.chunk.js",
+    "index.html": "/homepage/index.html",
+    "main.2a096292.css.map": "/homepage/static/css/main.2a096292.css.map",
+    "main.a122b0be.js.map": "/homepage/static/js/main.a122b0be.js.map",
+    "787.0f8d78ff.chunk.js.map": "/homepage/static/js/787.0f8d78ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2a096292.css",
-    "static/js/main.2057b6e8.js"
+    "static/js/main.a122b0be.js"
   ]
 }
